@@ -1,4 +1,6 @@
-# **Adjective Fire Danger/Smokey Bear**
+![Cal Fire Logo](img/calfirelong.png)
+
+# **Smokey the Bear/Adjective Fire Danger**
 
 View the final product [here!](slocountyfire.org/adjective_fire_danger)
 
@@ -6,12 +8,18 @@ Pulls Data from the RAWS (Remote Automated Weather Stations) and uses the most r
 to determine fire danger for that specific day.
 
 ## **Workflow**
-Using a github actions command an action occurs every hour that runs
-*scripts/xml_parser.py* then pushes all new data to the github server.
+Using a github actions cron command an action occurs every hour that runs
+*scripts/xml_parser.py* then pushes all new data to the github server. At 9 am
+on the local server another script gets run that updates the google sheet that
+creates the graph.
+
+## **index.html**
+Start page of the adjective fire danger, uses bootstrap to manage all the different divisions.
 
 ## **index.js**
-This code functions to pull data from hourly updated files and display the
-correct corresponding smokey bear image
+This code grabs the data from the XML folder to display the correct Smokey the Bear image.
+Using the JavaScript library *[Leaflet](https://leafletjs.com/index.html)* it creates a map that shows the fire danger for all
+of the RAWS in SLO.
 
 #### *Functions*
   *  *updatePage()* - Initializes the map and legend then loops through all the stations that the website handles.
@@ -50,9 +58,6 @@ A short script for updating the fire danger in the database connects to the Fire
 #### *Functions*
   * *main()* - Gets the database credentials, time and calls for an update to the database
   * *update_document()* Updates the documents in the Firestore that hold the Smokey Bear data
-
-## **index.html**
-Start page of the adjective fire danger, uses bootstrap to manage all the different divisions.
 
 ## **update_fire_danger.sh**
 This is the file that gets run on the x-drive every morning at 9 am and grabs the prediction for the adjective fire danger
