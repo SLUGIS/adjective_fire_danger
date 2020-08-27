@@ -43,7 +43,7 @@ function updatePage() {
   // loops through all the availivble stations
                   // station name     lat, long                   image name
   for (station of [["LAS_TABLAS",     [35.656447, -120.9241],     "smokey_bear_inland"],
-                  ["SLO",             [35.179347, -120.392719],   "smokey_bear_coastal"],
+                  ["SLO",             [35.3027, -120.6786],       "smokey_bear_coastal"],
                   ["BRANCH_MOUNTAIN", [35.185233, -120.084989],   null],
                   ["CARRIZO",         [35.096528, -119.773222],   null],
                   ["SAN_SIMEON",      [35.59555,  -121.1096],     null],
