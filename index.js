@@ -21,7 +21,7 @@ function updatePage() {
   }).addTo(mymap);
 
   // create a legend feature for the map
-  var legend = L.control({ position: "bottomleft" });
+  var legend = L.control({ position: "topright" });
 
   // add different features for the legend
   legend.onAdd = function(mymap) {
