@@ -119,7 +119,7 @@ function updateImg(station, img) {
 
 // creates a circle that displays a pop up
 function createCircle(mymap, name, loc, color, label) {
-  name = name.split(' ').join(' ');
+  name = name.split('_').join(' ');
   var circle = L.circle(loc, {
     color: color,
     fillColor: color,
