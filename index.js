@@ -91,14 +91,9 @@ function parseStation(station, mymap) {
       updateImg(station, './img/extreme.png');
       createCircle(mymap, station[0], station[1], '#FF0000', 'EXTREME');
       break;
-  }
-}
-
-// checks to make sure the image source is not null
-// then updates the correct smokey bear
-function updateImg(station, img) {
-  if(station[2] != null) {
-    document.getElementById(station[2]).setAttribute('src', img);
+    default:
+      updateImg(station, './img/low.png');
+      createCircle(mymap, station[0], station[1], '#9EA5B4'', 'No Data');
   }
 }
 
@@ -114,8 +109,17 @@ function loadFile(filePath) {
   return result;
 }
 
+// checks to make sure the image source is not null
+// then updates the correct smokey bear
+function updateImg(station, img) {
+  if(station[2] != null) {
+    document.getElementById(station[2]).setAttribute('src', img);
+  }
+}
+
 // creates a circle that displays a pop up
 function createCircle(mymap, name, loc, color, label) {
+  name = name.split(' ').replace(' ');
   var circle = L.circle(loc, {
     color: color,
     fillColor: color,
