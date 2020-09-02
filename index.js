@@ -93,7 +93,7 @@ function parseStation(station, mymap) {
       break;
     default:
       updateImg(station, './img/low.png');
-      createCircle(mymap, station[0], station[1], '#9EA5B4'', 'No Data');
+      createCircle(mymap, station[0], station[1], '#9EA5B4', 'No Data');
   }
 }
 
