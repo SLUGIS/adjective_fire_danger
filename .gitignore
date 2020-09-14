@@ -10,5 +10,6 @@ Gemfile
 Gemfile.lock
 index.markdown
 fire_danger_secrets.json
+unitapp_admin.json
 __pycache__
 notes.txt
